@@ -1,3 +1,5 @@
+ï»¿import profilePhoto from './assets/profile.jpg';
+
 const proofStats = [
   { value: '4+ Years', label: 'Teaching experience across classes 5-12' },
   { value: 'JEE Adv.', label: 'Qualified with disciplined exam preparation' },
@@ -102,8 +104,8 @@ function App() {
 
           <div className="hero-card">
             <div className="photo-card">
-              <div className="photo-placeholder">AD</div>
-              <p>Replace this with your best professional portrait for maximum impact.</p>
+              <img className="profile-photo" src={profilePhoto} alt="Aditya Bhagwat speaking at a podium" />
+              <p>Educator, speaker, and builder focused on clarity, consistency, and real-world execution.</p>
             </div>
             <div className="mini-proof">
               <strong>Authority Snapshot</strong>
@@ -308,7 +310,7 @@ function App() {
         <section className="contact-section" id="contact">
           <div className="section-heading">
             <p className="section-kicker">Call To Action</p>
-            <h2>Let’s build something meaningful together.</h2>
+            <h2>Let&apos;s build something meaningful together.</h2>
           </div>
           <div className="contact-grid">
             <article className="contact-card">
@@ -325,9 +327,9 @@ function App() {
             </article>
           </div>
           <div className="contact-strip">
-            <a href="mailto:your-email@example.com">your-email@example.com</a>
-            <a href="tel:+910000000000">+91 00000 00000</a>
-            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn Profile</a>
+            <a href="mailto:adityadhawan44@gmail.com">adityadhawan44@gmail.com</a>
+            <a href="tel:+919654689325">+91 96546 89325</a>
+            <a href="https://www.linkedin.com/in/aditya-bhagwat-9654ad" target="_blank" rel="noreferrer">LinkedIn Profile</a>
           </div>
         </section>
       </main>
