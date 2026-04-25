@@ -1,4 +1,6 @@
-﻿import profilePhoto from '../assets/profile.jpg';
+import profilePhoto from '../assets/profile.jpg';
+import workspaceHero from '../assets/web/workspace-hero.jpg';
+import speakerImage from '../assets/web/speaker.jpg';
 import { lessons, values } from '../data/siteData';
 
 function AboutPage() {
@@ -12,8 +14,10 @@ function AboutPage() {
             I started teaching early and learned to value clarity before complexity. JEE Advanced strengthened discipline. DTU added technical depth. Now I am building at the intersection of education, AI, systems, and personal brand.
           </p>
         </div>
-        <div className="editorial-panel image-panel warm-panel">
+        <div className="about-collage editorial-panel warm-panel">
           <img className="portrait-secondary" src={profilePhoto} alt="Aditya Bhagwat profile portrait" />
+          <img className="collage-card collage-card-top" src={speakerImage} alt="Speaker holding microphone" />
+          <img className="collage-card collage-card-bottom" src={workspaceHero} alt="Modern organized workspace with a laptop" />
         </div>
       </section>
 

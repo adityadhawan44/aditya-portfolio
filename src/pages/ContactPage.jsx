@@ -1,4 +1,5 @@
-﻿import { siteMeta } from '../data/siteData';
+import speakerImage from '../assets/web/speaker.jpg';
+import { siteMeta } from '../data/siteData';
 
 function ContactPage() {
   return (
@@ -12,6 +13,7 @@ function ContactPage() {
           </p>
         </div>
         <div className="editorial-panel dark-panel contact-card-large">
+          <img className="contact-hero-image" src={speakerImage} alt="Speaker holding a microphone" />
           <span>Email</span>
           <a href={`mailto:${siteMeta.email}`}>{siteMeta.email}</a>
           <span>Phone</span>

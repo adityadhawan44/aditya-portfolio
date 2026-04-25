@@ -1,10 +1,13 @@
-﻿import { teachingPillars } from '../data/siteData';
+import studyClass from '../assets/web/study-class.jpg';
+import workspaceDetail from '../assets/web/workspace-detail.jpg';
+import { teachingPillars } from '../data/siteData';
 
 function TeachingPage() {
   return (
     <>
       <section className="page-hero teaching-hero">
-        <div className="editorial-panel dark-panel">
+        <div className="editorial-panel dark-panel media-panel">
+          <img className="section-feature-image" src={studyClass} alt="Student studying at a desk with a chalkboard" />
           <p className="section-eyebrow soft">Teaching</p>
           <h1 className="display-title light">Teaching positioned like a premium service.</h1>
           <p className="lead-copy light-copy">
@@ -12,6 +15,7 @@ function TeachingPage() {
           </p>
         </div>
         <div className="editorial-panel warm-panel service-panel">
+          <img className="service-image" src={workspaceDetail} alt="Modern workspace with a laptop and desk setup" />
           <p className="section-eyebrow">Who it is for</p>
           <h2 className="section-title">Students who want depth, structure, and serious mentoring.</h2>
           <p>Ideal for classes 5-12, especially where conceptual understanding matters more than surface memorization.</p>

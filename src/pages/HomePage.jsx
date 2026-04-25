@@ -1,6 +1,9 @@
-﻿import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import profilePhoto from '../assets/profile.jpg';
-import { contentPillars, projects, siteMeta, stats } from '../data/siteData';
+import workspaceHero from '../assets/web/workspace-hero.jpg';
+import workspaceDetail from '../assets/web/workspace-detail.jpg';
+import speakerImage from '../assets/web/speaker.jpg';
+import { contentPillars, siteMeta, stats } from '../data/siteData';
 
 function HomePage() {
   return (
@@ -69,6 +72,24 @@ function HomePage() {
           <p>Classes, conceptual clarity, and mentoring are positioned like a refined service, not a casual tuition ad.</p>
           <Link className="inline-action" to="/teaching">See teaching page</Link>
         </article>
+      </section>
+
+      <section className="immersive-gallery">
+        <article className="gallery-copy editorial-panel">
+          <p className="section-eyebrow">Visual mood</p>
+          <h2 className="section-title">More layered, more cinematic, and much more interesting to look at.</h2>
+          <p>
+            The extra image moments give the site a gallery feel instead of a plain portfolio feel. That shift makes the whole brand look more premium, intentional, and memorable.
+          </p>
+        </article>
+
+        <div className="gallery-image-stack">
+          <img className="gallery-large" src={workspaceHero} alt="Modern organized workspace with a laptop" />
+          <div className="gallery-split">
+            <img src={speakerImage} alt="Man holding a microphone on stage" />
+            <img src={workspaceDetail} alt="Modern workspace with a laptop and desk setup" />
+          </div>
+        </div>
       </section>
 
       <section className="editorial-band dark-panel">

@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   color-scheme: light;
   --bg: #ede5d7;
   --paper: #f7f0e3;
@@ -685,5 +685,145 @@ img {
   .contact-card-large a {
     font-size: 1.3rem;
     word-break: break-word;
+  }
+}
+
+.immersive-gallery {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 28px;
+}
+
+.gallery-image-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.gallery-large,
+.gallery-split img,
+.section-feature-image,
+.service-image,
+.contact-hero-image,
+.project-image,
+.collage-card {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.gallery-large {
+  height: 400px;
+}
+
+.gallery-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.gallery-split img {
+  height: 260px;
+}
+
+.about-collage {
+  position: relative;
+  min-height: 760px;
+  overflow: hidden;
+}
+
+.about-collage .portrait-secondary {
+  height: 520px;
+}
+
+.collage-card {
+  position: absolute;
+  width: 42%;
+  box-shadow: var(--shadow);
+  border: 6px solid rgba(252, 247, 239, 0.7);
+}
+
+.collage-card-top {
+  right: 18px;
+  top: 54px;
+  height: 240px;
+}
+
+.collage-card-bottom {
+  right: 32px;
+  bottom: 32px;
+  height: 220px;
+}
+
+.project-image-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+}
+
+.project-image-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17, 19, 23, 0.08) 0%, rgba(17, 19, 23, 0.68) 100%);
+}
+
+.project-image-frame span {
+  position: relative;
+  z-index: 1;
+}
+
+.media-panel,
+.service-panel {
+  display: grid;
+  align-content: start;
+}
+
+.section-feature-image {
+  height: 320px;
+  margin-bottom: 24px;
+}
+
+.service-image {
+  height: 220px;
+  margin-bottom: 24px;
+}
+
+.contact-hero-image {
+  height: 280px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 1100px) {
+  .immersive-gallery,
+  .gallery-split {
+    grid-template-columns: 1fr;
+  }
+
+  .about-collage {
+    min-height: auto;
+  }
+
+  .collage-card {
+    position: static;
+    width: 100%;
+    margin-top: 18px;
+    border-width: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .gallery-large,
+  .gallery-split img,
+  .section-feature-image,
+  .service-image,
+  .contact-hero-image {
+    height: auto;
+    min-height: 220px;
   }
 }

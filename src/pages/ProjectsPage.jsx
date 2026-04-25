@@ -1,4 +1,10 @@
-﻿import { projects } from '../data/siteData';
+import workspaceHero from '../assets/web/workspace-hero.jpg';
+import studyClass from '../assets/web/study-class.jpg';
+import workspaceDetail from '../assets/web/workspace-detail.jpg';
+import speakerImage from '../assets/web/speaker.jpg';
+import { projects } from '../data/siteData';
+
+const projectVisuals = [workspaceHero, workspaceDetail, speakerImage, studyClass];
 
 function ProjectsPage() {
   return (
@@ -17,6 +23,7 @@ function ProjectsPage() {
         {projects.map((project, index) => (
           <article className={`project-showcase ${index % 2 === 0 ? '' : 'reverse'}`} key={project.slug}>
             <div className={`project-image-frame ${index % 3 === 0 ? 'dark-panel' : index % 3 === 1 ? 'warm-panel' : 'olive-panel'}`}>
+              <img className="project-image" src={projectVisuals[index % projectVisuals.length]} alt={project.title} />
               <span>{project.title}</span>
             </div>
             <div className="project-story editorial-panel">
