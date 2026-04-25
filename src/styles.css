@@ -862,3 +862,181 @@ img {
 .sunset-panel .section-title {
   color: inherit;
 }
+
+.page-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.page-progress span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #d08c64 0%, #7f8f7a 45%, #4e6f73 100%);
+  box-shadow: 0 0 22px rgba(208, 140, 100, 0.45);
+  transition: width 120ms linear;
+}
+
+.page-enter {
+  animation: pageFade 620ms ease both;
+}
+
+.reveal-card {
+  animation: floatIn 720ms ease both;
+}
+
+.reveal-card:nth-child(2) {
+  animation-delay: 60ms;
+}
+
+.reveal-card:nth-child(3) {
+  animation-delay: 120ms;
+}
+
+.signal-marquee {
+  overflow: hidden;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 26px;
+  width: max-content;
+  animation: marqueeMove 28s linear infinite;
+}
+
+.marquee-track span {
+  font: 700 0.86rem/1 'Trebuchet MS', sans-serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(252, 247, 239, 0.82);
+  white-space: nowrap;
+}
+
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.spotlight-card {
+  min-height: 220px;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.spotlight-card h3 {
+  margin: 0 0 14px;
+  font-size: 2rem;
+}
+
+.spotlight-card:hover,
+.feature-card:hover,
+.project-showcase:hover .project-story,
+.project-showcase:hover .project-image-frame,
+.editorial-panel:hover .service-image,
+.editorial-panel:hover .section-feature-image,
+.gallery-image-stack img:hover,
+.contact-card-large:hover {
+  transform: translateY(-4px);
+}
+
+.project-image,
+.gallery-large,
+.gallery-split img,
+.section-feature-image,
+.service-image,
+.contact-hero-image,
+.hero-photo,
+.portrait-secondary,
+.collage-card {
+  transition: transform 420ms ease, filter 420ms ease;
+}
+
+.project-showcase:hover .project-image,
+.gallery-image-stack img:hover,
+.editorial-panel:hover .service-image,
+.editorial-panel:hover .section-feature-image,
+.hero-visual:hover .hero-photo,
+.about-collage:hover .portrait-secondary,
+.about-collage:hover .collage-card {
+  transform: scale(1.035);
+}
+
+.availability-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.availability-tags span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.52);
+  border: 1px solid var(--line);
+  font: 600 0.84rem/1 'Trebuchet MS', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.light-links a {
+  color: rgba(252, 247, 239, 0.92);
+}
+
+@keyframes marqueeMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1100px) {
+  .spotlight-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter,
+  .reveal-card,
+  .marquee-track,
+  .project-image,
+  .gallery-large,
+  .gallery-split img,
+  .section-feature-image,
+  .service-image,
+  .contact-hero-image,
+  .hero-photo,
+  .portrait-secondary,
+  .collage-card,
+  .page-progress span {
+    animation: none !important;
+    transition: none !important;
+  }
+}

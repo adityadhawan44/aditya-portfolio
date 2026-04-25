@@ -1,4 +1,4 @@
-﻿export const siteMeta = {
+export const siteMeta = {
   name: 'Aditya Bhagwat',
   title: 'Educator, AI Builder, Founder',
   email: 'adityadhawan44@gmail.com',
@@ -89,3 +89,33 @@ export const teachingPillars = [
 ];
 
 export const contentPillars = ['Money', 'AI', 'Student growth', 'Discipline', 'Career direction'];
+
+export const buildSignals = [
+  'Currently building: AI student tools',
+  'Growing: coaching systems and trust assets',
+  'Publishing: content around AI, money, and student growth',
+  'Design direction: editorial, cinematic, and premium',
+];
+
+export const spotlightCards = [
+  {
+    title: 'Builder mindset',
+    copy: 'A stronger digital identity that combines execution, ambition, and product thinking.',
+  },
+  {
+    title: 'Teaching authority',
+    copy: 'Learning systems, conceptual clarity, and long-term trust rather than surface-level coaching noise.',
+  },
+  {
+    title: 'Public brand',
+    copy: 'A portfolio designed to feel like the front page of a serious personal brand, not just a CV.',
+  },
+];
+
+export const availability = [
+  'Internships',
+  'Freelance collaborations',
+  'Education partnerships',
+  'Speaking invitations',
+  'Student mentoring',
+];

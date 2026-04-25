@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom';
 import workspaceHero from '../assets/web/workspace-hero.jpg';
 import workspaceDetail from '../assets/web/workspace-detail.jpg';
 import speakerImage from '../assets/web/speaker.jpg';
-import { contentPillars, siteMeta, stats } from '../data/siteData';
+import { buildSignals, contentPillars, siteMeta, spotlightCards, stats } from '../data/siteData';
 
 function HomePage() {
   return (
     <>
       <section className="hero-grid page-hero">
-        <div className="hero-copy editorial-panel aurora-panel">
+        <div className="hero-copy editorial-panel aurora-panel reveal-card">
           <p className="section-eyebrow">Luxury editorial portfolio</p>
           <h1 className="display-title">Educator, AI builder, and founder with a premium digital presence.</h1>
           <p className="lead-copy">
@@ -28,7 +28,7 @@ function HomePage() {
           </div>
         </div>
 
-        <div className="hero-visual editorial-panel dark-panel">
+        <div className="hero-visual editorial-panel dark-panel reveal-card">
           <img className="hero-photo" src={speakerImage} alt="General public speaking scene" />
           <div className="image-caption-block">
             <span>Featured atmosphere</span>
@@ -37,7 +37,15 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="split-feature">
+      <section className="signal-marquee editorial-panel dark-panel reveal-card">
+        <div className="marquee-track">
+          {[...buildSignals, ...buildSignals].map((item, index) => (
+            <span key={`${item}-${index}`}>{item}</span>
+          ))}
+        </div>
+      </section>
+
+      <section className="split-feature reveal-card">
         <div>
           <p className="section-eyebrow">Positioning</p>
           <h2 className="section-title">Not just a portfolio. A narrative of credibility, ambition, and execution.</h2>
@@ -53,19 +61,19 @@ function HomePage() {
       </section>
 
       <section className="feature-cards-grid">
-        <article className="feature-card tall-card dark-panel">
+        <article className="feature-card tall-card dark-panel reveal-card">
           <p className="section-eyebrow soft">About</p>
           <h3>Story with authority</h3>
           <p>From early teaching to JEE Advanced and DTU, the About page frames the journey as discipline plus momentum.</p>
           <Link className="inline-action" to="/about">Read the story</Link>
         </article>
-        <article className="feature-card image-card warm-panel">
+        <article className="feature-card image-card warm-panel reveal-card">
           <p className="section-eyebrow">Projects</p>
           <h3>Case-study style work</h3>
           <p>Projects are presented with problem, solution, stack, and result so they read like serious work, not placeholder cards.</p>
           <Link className="inline-action" to="/projects">Browse projects</Link>
         </article>
-        <article className="feature-card image-card plum-panel">
+        <article className="feature-card image-card plum-panel reveal-card">
           <p className="section-eyebrow soft">Teaching</p>
           <h3>A premium academic offering</h3>
           <p>Classes, conceptual clarity, and mentoring are positioned like a refined service, not a casual tuition ad.</p>
@@ -73,8 +81,18 @@ function HomePage() {
         </article>
       </section>
 
+      <section className="spotlight-grid">
+        {spotlightCards.map((card) => (
+          <article className="editorial-panel spotlight-card reveal-card" key={card.title}>
+            <p className="section-eyebrow">Signature layer</p>
+            <h3>{card.title}</h3>
+            <p>{card.copy}</p>
+          </article>
+        ))}
+      </section>
+
       <section className="immersive-gallery">
-        <article className="gallery-copy editorial-panel sunset-panel">
+        <article className="gallery-copy editorial-panel sunset-panel reveal-card">
           <p className="section-eyebrow">Visual mood</p>
           <h2 className="section-title">More layered, more cinematic, and much more interesting to look at.</h2>
           <p>
@@ -82,7 +100,7 @@ function HomePage() {
           </p>
         </article>
 
-        <div className="gallery-image-stack">
+        <div className="gallery-image-stack reveal-card">
           <img className="gallery-large" src={workspaceHero} alt="Modern organized workspace with a laptop" />
           <div className="gallery-split">
             <img src={speakerImage} alt="General public speaking image" />
@@ -91,7 +109,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="editorial-band dark-panel">
+      <section className="editorial-band dark-panel reveal-card">
         <div>
           <p className="section-eyebrow soft">Content brand</p>
           <h2 className="section-title light">Building in public through ideas, systems, and student growth.</h2>
@@ -107,7 +125,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="closing-callout editorial-panel teal-panel">
+      <section className="closing-callout editorial-panel teal-panel reveal-card">
         <div>
           <p className="section-eyebrow soft">Quick contact</p>
           <h2 className="section-title light">Available for collaborations, internships, coaching, and serious conversations.</h2>
