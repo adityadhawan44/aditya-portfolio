@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import profilePhoto from '../assets/profile.jpg';
 import workspaceHero from '../assets/web/workspace-hero.jpg';
 import workspaceDetail from '../assets/web/workspace-detail.jpg';
 import speakerImage from '../assets/web/speaker.jpg';
@@ -9,7 +8,7 @@ function HomePage() {
   return (
     <>
       <section className="hero-grid page-hero">
-        <div className="hero-copy editorial-panel">
+        <div className="hero-copy editorial-panel aurora-panel">
           <p className="section-eyebrow">Luxury editorial portfolio</p>
           <h1 className="display-title">Educator, AI builder, and founder with a premium digital presence.</h1>
           <p className="lead-copy">
@@ -30,10 +29,10 @@ function HomePage() {
         </div>
 
         <div className="hero-visual editorial-panel dark-panel">
-          <img className="hero-photo" src={profilePhoto} alt="Aditya Bhagwat speaking at a podium" />
+          <img className="hero-photo" src={speakerImage} alt="General public speaking scene" />
           <div className="image-caption-block">
-            <span>Featured portrait</span>
-            <p>Public speaking, teaching, and founder energy presented with a more refined visual language.</p>
+            <span>Featured atmosphere</span>
+            <p>Speaking, ambition, and founder presence expressed through generalized editorial imagery.</p>
           </div>
         </div>
       </section>
@@ -66,8 +65,8 @@ function HomePage() {
           <p>Projects are presented with problem, solution, stack, and result so they read like serious work, not placeholder cards.</p>
           <Link className="inline-action" to="/projects">Browse projects</Link>
         </article>
-        <article className="feature-card image-card olive-panel">
-          <p className="section-eyebrow">Teaching</p>
+        <article className="feature-card image-card plum-panel">
+          <p className="section-eyebrow soft">Teaching</p>
           <h3>A premium academic offering</h3>
           <p>Classes, conceptual clarity, and mentoring are positioned like a refined service, not a casual tuition ad.</p>
           <Link className="inline-action" to="/teaching">See teaching page</Link>
@@ -75,7 +74,7 @@ function HomePage() {
       </section>
 
       <section className="immersive-gallery">
-        <article className="gallery-copy editorial-panel">
+        <article className="gallery-copy editorial-panel sunset-panel">
           <p className="section-eyebrow">Visual mood</p>
           <h2 className="section-title">More layered, more cinematic, and much more interesting to look at.</h2>
           <p>
@@ -86,7 +85,7 @@ function HomePage() {
         <div className="gallery-image-stack">
           <img className="gallery-large" src={workspaceHero} alt="Modern organized workspace with a laptop" />
           <div className="gallery-split">
-            <img src={speakerImage} alt="Man holding a microphone on stage" />
+            <img src={speakerImage} alt="General public speaking image" />
             <img src={workspaceDetail} alt="Modern workspace with a laptop and desk setup" />
           </div>
         </div>
@@ -108,12 +107,12 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="closing-callout">
+      <section className="closing-callout editorial-panel teal-panel">
         <div>
-          <p className="section-eyebrow">Quick contact</p>
-          <h2 className="section-title">Available for collaborations, internships, coaching, and serious conversations.</h2>
+          <p className="section-eyebrow soft">Quick contact</p>
+          <h2 className="section-title light">Available for collaborations, internships, coaching, and serious conversations.</h2>
         </div>
-        <div className="contact-stack">
+        <div className="contact-stack light-links">
           <a href={`mailto:${siteMeta.email}`}>{siteMeta.email}</a>
           <a href="tel:+919654689325">{siteMeta.phone}</a>
           <a href={siteMeta.linkedin} target="_blank" rel="noreferrer">LinkedIn profile</a>

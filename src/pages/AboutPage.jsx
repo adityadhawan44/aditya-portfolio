@@ -1,13 +1,13 @@
-import profilePhoto from '../assets/profile.jpg';
 import workspaceHero from '../assets/web/workspace-hero.jpg';
 import speakerImage from '../assets/web/speaker.jpg';
+import studyClass from '../assets/web/study-class.jpg';
 import { lessons, values } from '../data/siteData';
 
 function AboutPage() {
   return (
     <>
       <section className="page-hero about-hero">
-        <div className="editorial-panel text-panel">
+        <div className="editorial-panel text-panel rose-panel">
           <p className="section-eyebrow">About</p>
           <h1 className="display-title">A builder shaped by teaching, discipline, and long-term thinking.</h1>
           <p className="lead-copy">
@@ -15,8 +15,8 @@ function AboutPage() {
           </p>
         </div>
         <div className="about-collage editorial-panel warm-panel">
-          <img className="portrait-secondary" src={profilePhoto} alt="Aditya Bhagwat profile portrait" />
-          <img className="collage-card collage-card-top" src={speakerImage} alt="Speaker holding microphone" />
+          <img className="portrait-secondary" src={studyClass} alt="General study and learning scene" />
+          <img className="collage-card collage-card-top" src={speakerImage} alt="General speaker holding microphone" />
           <img className="collage-card collage-card-bottom" src={workspaceHero} alt="Modern organized workspace with a laptop" />
         </div>
       </section>
@@ -67,7 +67,7 @@ function AboutPage() {
             ))}
           </div>
         </article>
-        <article className="editorial-panel">
+        <article className="editorial-panel aurora-panel">
           <p className="section-eyebrow">Lessons learned</p>
           <div className="stack-list">
             {lessons.map((lesson) => (
