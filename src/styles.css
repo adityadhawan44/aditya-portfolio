@@ -479,7 +479,7 @@ img {
 .brand-visual-grid {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
-  grid-template-rows: 214px 214px;
+  grid-template-rows: 190px 190px 170px;
   gap: 16px;
 }
 
@@ -493,6 +493,10 @@ img {
 
 .brand-visual-large {
   grid-row: 1 / span 2;
+}
+
+.brand-visual-grid img:last-child {
+  grid-column: 1 / span 2;
 }
 
 .contact-stack,

@@ -1,10 +1,10 @@
-import workspaceHero from '../assets/web/workspace-hero.jpg';
-import studyClass from '../assets/web/study-class.jpg';
-import workspaceDetail from '../assets/web/workspace-detail.jpg';
-import speakerImage from '../assets/web/speaker.jpg';
+import projectScreens from '../assets/web/set2/project-desk-screens.jpg';
+import projectEquipment from '../assets/web/set2/project-equipment.jpg';
+import projectNotebook from '../assets/web/set2/project-notebook.jpg';
+import projectCoffeeDesk from '../assets/web/set2/project-coffee-desk.jpg';
 import { projects } from '../data/siteData';
 
-const projectVisuals = [workspaceHero, workspaceDetail, speakerImage, studyClass];
+const projectVisuals = [projectScreens, projectEquipment, projectNotebook, projectCoffeeDesk];
 
 function ProjectsPage() {
   return (

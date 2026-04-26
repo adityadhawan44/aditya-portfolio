@@ -3,6 +3,10 @@ import workspaceHero from '../assets/web/workspace-hero.jpg';
 import workspaceDetail from '../assets/web/workspace-detail.jpg';
 import speakerImage from '../assets/web/speaker.jpg';
 import studyClass from '../assets/web/study-class.jpg';
+import heroPodium from '../assets/web/set2/hero-podium.jpg';
+import brandSpeaker from '../assets/web/set2/brand-speaker.jpg';
+import brandTeam from '../assets/web/set2/brand-team.jpg';
+import brandWorkspace from '../assets/web/set2/brand-workspace.jpg';
 import { buildSignals, contentPillars, siteMeta, spotlightCards, stats } from '../data/siteData';
 
 function HomePage() {
@@ -30,10 +34,10 @@ function HomePage() {
         </div>
 
         <div className="hero-visual editorial-panel dark-panel reveal-card">
-          <img className="hero-photo" src={speakerImage} alt="General public speaking scene" />
+          <img className="hero-photo" src={heroPodium} alt="General podium and microphone stage scene" />
           <div className="image-caption-block">
             <span>Featured atmosphere</span>
-            <p>Speaking, ambition, and founder presence expressed through generalized editorial imagery.</p>
+            <p>Ambition, stage presence, and professional energy expressed through high-quality generalized editorial imagery.</p>
           </div>
         </div>
       </section>
@@ -127,8 +131,9 @@ function HomePage() {
           </div>
           <div className="brand-visual-grid">
             <img className="brand-visual-large" src={studyClass} alt="General student study setup" />
-            <img src={speakerImage} alt="General public speaking image" />
-            <img src={workspaceDetail} alt="Modern workspace with laptop and desk setup" />
+            <img src={brandSpeaker} alt="General speaker on stage" />
+            <img src={brandWorkspace} alt="Modern workspace with laptop and desk accessories" />
+            <img src={brandTeam} alt="General office team collaborating" />
           </div>
         </div>
       </section>

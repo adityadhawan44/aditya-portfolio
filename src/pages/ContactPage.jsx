@@ -1,4 +1,4 @@
-import speakerImage from '../assets/web/speaker.jpg';
+import contactStage from '../assets/web/set2/contact-stage.jpg';
 import { availability, siteMeta } from '../data/siteData';
 
 function ContactPage() {
@@ -18,7 +18,7 @@ function ContactPage() {
           </div>
         </div>
         <div className="editorial-panel dark-panel contact-card-large reveal-card">
-          <img className="contact-hero-image" src={speakerImage} alt="Speaker holding a microphone" />
+          <img className="contact-hero-image" src={contactStage} alt="General stage with speakers and microphone" />
           <span>Email</span>
           <a href={`mailto:${siteMeta.email}`}>{siteMeta.email}</a>
           <span>Phone</span>

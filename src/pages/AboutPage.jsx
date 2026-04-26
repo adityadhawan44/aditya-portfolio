@@ -1,6 +1,6 @@
-import workspaceHero from '../assets/web/workspace-hero.jpg';
-import speakerImage from '../assets/web/speaker.jpg';
-import studyClass from '../assets/web/study-class.jpg';
+import aboutLibrary from '../assets/web/set2/about-library.jpg';
+import aboutStage from '../assets/web/set2/about-stage.jpg';
+import aboutStudyDesk from '../assets/web/set2/about-study-desk.jpg';
 import { lessons, values } from '../data/siteData';
 
 function AboutPage() {
@@ -15,9 +15,9 @@ function AboutPage() {
           </p>
         </div>
         <div className="about-collage editorial-panel warm-panel">
-          <img className="portrait-secondary" src={studyClass} alt="General study and learning scene" />
-          <img className="collage-card collage-card-top" src={speakerImage} alt="General speaker holding microphone" />
-          <img className="collage-card collage-card-bottom" src={workspaceHero} alt="Modern organized workspace with a laptop" />
+          <img className="portrait-secondary" src={aboutLibrary} alt="General library and desk scene" />
+          <img className="collage-card collage-card-top" src={aboutStage} alt="General man speaking on stage" />
+          <img className="collage-card collage-card-bottom" src={aboutStudyDesk} alt="General study desk with books and laptop" />
         </div>
       </section>
 
