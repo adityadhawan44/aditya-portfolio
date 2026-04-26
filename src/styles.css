@@ -443,6 +443,10 @@ img {
   grid-template-columns: 1fr;
 }
 
+.brand-title {
+  max-width: 18ch;
+}
+
 .dark-pill {
   display: inline-flex;
   padding: 10px 14px;
@@ -458,6 +462,37 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
+}
+
+.brand-layout {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 28px;
+  align-items: end;
+}
+
+.brand-copy {
+  display: grid;
+  gap: 18px;
+}
+
+.brand-visual-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  grid-template-rows: 214px 214px;
+  gap: 16px;
+}
+
+.brand-visual-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  transition: transform 420ms ease, filter 420ms ease;
+}
+
+.brand-visual-large {
+  grid-row: 1 / span 2;
 }
 
 .contact-stack,
@@ -622,6 +657,7 @@ img {
   .teaching-hero,
   .contact-hero,
   .dual-column-section,
+  .brand-layout,
   .band-copy,
   .feature-cards-grid,
   .triple-panel-grid,
@@ -845,6 +881,15 @@ img {
     height: auto;
     min-height: 220px;
   }
+
+  .brand-visual-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, minmax(200px, auto));
+  }
+
+  .brand-visual-large {
+    grid-row: auto;
+  }
 }
 .plum-panel {
   background: linear-gradient(180deg, #6f5266 0%, #3f2c44 100%);
@@ -959,6 +1004,7 @@ img {
 .project-showcase:hover .project-image-frame,
 .editorial-panel:hover .service-image,
 .editorial-panel:hover .section-feature-image,
+.brand-visual-grid img:hover,
 .gallery-image-stack img:hover,
 .contact-card-large:hover {
   transform: translateY(-4px);
@@ -977,6 +1023,7 @@ img {
 }
 
 .project-showcase:hover .project-image,
+.brand-visual-grid img:hover,
 .gallery-image-stack img:hover,
 .editorial-panel:hover .service-image,
 .editorial-panel:hover .section-feature-image,

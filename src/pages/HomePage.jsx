@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import workspaceHero from '../assets/web/workspace-hero.jpg';
 import workspaceDetail from '../assets/web/workspace-detail.jpg';
 import speakerImage from '../assets/web/speaker.jpg';
+import studyClass from '../assets/web/study-class.jpg';
 import { buildSignals, contentPillars, siteMeta, spotlightCards, stats } from '../data/siteData';
 
 function HomePage() {
@@ -110,18 +111,25 @@ function HomePage() {
       </section>
 
       <section className="editorial-band dark-panel reveal-card">
-        <div>
+        <div className="brand-content">
           <p className="section-eyebrow soft">Content brand</p>
-          <h2 className="section-title light">Building in public through ideas, systems, and student growth.</h2>
+          <h2 className="section-title light brand-title">Building in public through ideas, systems, and student growth.</h2>
         </div>
         <div className="pill-row">
           {contentPillars.map((item) => (
             <span key={item} className="dark-pill">{item}</span>
           ))}
         </div>
-        <div className="band-copy">
-          <p>Step Up is where the educational voice, AI curiosity, and personal brand start to merge into something larger.</p>
-          <p>Use this page as the digital foundation for future YouTube embeds, shorts, and public-facing case studies.</p>
+        <div className="brand-layout">
+          <div className="brand-copy">
+            <p>Step Up brings together AI curiosity, student growth, discipline, and practical ideas in a more public-facing format.</p>
+            <p>The goal is simple: build a brand that feels intelligent, ambitious, and genuinely useful.</p>
+          </div>
+          <div className="brand-visual-grid">
+            <img className="brand-visual-large" src={studyClass} alt="General student study setup" />
+            <img src={speakerImage} alt="General public speaking image" />
+            <img src={workspaceDetail} alt="Modern workspace with laptop and desk setup" />
+          </div>
         </div>
       </section>
 
