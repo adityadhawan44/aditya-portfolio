@@ -590,6 +590,13 @@ img {
   margin-right: 10px;
 }
 
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 22px 0 8px;
+}
+
 .stack-tags {
   display: flex;
   flex-wrap: wrap;

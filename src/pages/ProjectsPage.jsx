@@ -32,6 +32,18 @@ function ProjectsPage() {
               <p><strong>Problem</strong> {project.problem}</p>
               <p><strong>Solution</strong> {project.solution}</p>
               <p><strong>Result</strong> {project.result}</p>
+              <div className="project-actions">
+                {project.codeUrl ? (
+                  <a className="button dark" href={project.codeUrl} target="_blank" rel="noreferrer">
+                    View GitHub
+                  </a>
+                ) : null}
+                {project.liveUrl ? (
+                  <a className="button light" href={project.liveUrl} target="_blank" rel="noreferrer">
+                    Live Preview
+                  </a>
+                ) : null}
+              </div>
               <div className="stack-tags">
                 {project.stack.map((item) => (
                   <span key={item}>{item}</span>
