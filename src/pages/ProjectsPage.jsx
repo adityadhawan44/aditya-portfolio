@@ -12,10 +12,10 @@ function ProjectsPage() {
       <section className="page-hero projects-hero editorial-panel">
         <div>
           <p className="section-eyebrow">Selected projects</p>
-          <h1 className="display-title">Work presented as premium case studies, not generic tiles.</h1>
+          <h1 className="display-title">Projects should explain what I noticed, why I cared, and what I built next.</h1>
         </div>
         <p className="lead-copy narrow-copy">
-          The layout direction is inspired by luxury portfolio websites, but the storytelling is product-led. Each project highlights the problem, the response, the tools, and the outcome.
+          I do not want this section to feel like title plus stack plus screenshot. Each case study is framed around motivation, product thinking, features, impact, and future direction.
         </p>
       </section>
 
@@ -30,8 +30,24 @@ function ProjectsPage() {
               <p className="section-eyebrow">{project.subtitle}</p>
               <h2>{project.title}</h2>
               <p><strong>Problem</strong> {project.problem}</p>
+              <p><strong>Why I built it</strong> {project.why}</p>
               <p><strong>Solution</strong> {project.solution}</p>
-              <p><strong>Result</strong> {project.result}</p>
+              <div className="project-detail-grid">
+                <article className="project-detail-card">
+                  <span>Features</span>
+                  <ul className="project-bullet-list">
+                    {project.features.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </article>
+                <article className="project-detail-card">
+                  <span>Impact</span>
+                  <p>{project.impact}</p>
+                  <span>Future vision</span>
+                  <p>{project.vision}</p>
+                </article>
+              </div>
               <div className="project-actions">
                 {project.codeUrl ? (
                   <a className="button dark" href={project.codeUrl} target="_blank" rel="noreferrer">

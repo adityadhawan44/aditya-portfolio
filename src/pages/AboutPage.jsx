@@ -1,7 +1,7 @@
 import aboutLibrary from '../assets/web/set2/about-library.jpg';
 import aboutStage from '../assets/web/set2/about-stage.jpg';
 import aboutStudyDesk from '../assets/web/set2/about-study-desk.jpg';
-import { lessons, values } from '../data/siteData';
+import { lessons, storyTimeline, values, whyBuild } from '../data/siteData';
 
 function AboutPage() {
   return (
@@ -9,9 +9,9 @@ function AboutPage() {
       <section className="page-hero about-hero">
         <div className="editorial-panel text-panel rose-panel">
           <p className="section-eyebrow">About</p>
-          <h1 className="display-title">A builder shaped by teaching, discipline, and long-term thinking.</h1>
+          <h1 className="display-title">I did not start with startup language. I started by noticing student struggles up close.</h1>
           <p className="lead-copy">
-            I started teaching early and learned to value clarity before complexity. JEE Advanced strengthened discipline. DTU added technical depth. Now I am building at the intersection of education, AI, systems, and personal brand.
+            Teaching came before identity. JEE built discipline. DTU added engineering depth. Over time, those pieces started pointing in one direction: build AI-driven systems that make learning, guidance, and progress feel less confusing.
           </p>
         </div>
         <div className="about-collage editorial-panel warm-panel">
@@ -24,37 +24,18 @@ function AboutPage() {
       <section className="timeline-layout editorial-panel">
         <div>
           <p className="section-eyebrow">Journey</p>
-          <h2 className="section-title">Progress built in distinct chapters.</h2>
+          <h2 className="section-title">The story makes more sense in sequence.</h2>
         </div>
         <div className="timeline-list">
-          <article>
-            <span>01</span>
-            <div>
-              <h3>Teaching foundation</h3>
-              <p>Started by helping students understand difficult concepts with more confidence and simplicity.</p>
-            </div>
-          </article>
-          <article>
-            <span>02</span>
-            <div>
-              <h3>Academic credibility</h3>
-              <p>JEE Advanced qualification and DTU sharpened the profile with proof, rigor, and momentum.</p>
-            </div>
-          </article>
-          <article>
-            <span>03</span>
-            <div>
-              <h3>Operator mindset</h3>
-              <p>Turned teaching into systems thinking through structure, outcomes, and trust-building.</p>
-            </div>
-          </article>
-          <article>
-            <span>04</span>
-            <div>
-              <h3>Builder era</h3>
-              <p>Expanded into AI projects, automation flows, and a more public-facing brand presence.</p>
-            </div>
-          </article>
+          {storyTimeline.map((item) => (
+            <article key={item.number}>
+              <span>{item.number}</span>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -68,13 +49,25 @@ function AboutPage() {
           </div>
         </article>
         <article className="editorial-panel aurora-panel">
-          <p className="section-eyebrow">Lessons learned</p>
+          <p className="section-eyebrow">Lessons that stayed with me</p>
           <div className="stack-list">
             {lessons.map((lesson) => (
               <p key={lesson}>{lesson}</p>
             ))}
           </div>
         </article>
+      </section>
+
+      <section className="editorial-panel why-build-panel">
+        <div>
+          <p className="section-eyebrow">Why I build</p>
+          <h2 className="section-title">The ambition is to make useful systems, not just finish projects.</h2>
+        </div>
+        <div className="story-stack">
+          {whyBuild.map((item) => (
+            <p key={item}>{item}</p>
+          ))}
+        </div>
       </section>
     </>
   );
