@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import workspaceHero from '../assets/web/workspace-hero.jpg';
 import workspaceDetail from '../assets/web/workspace-detail.jpg';
 import speakerImage from '../assets/web/speaker.jpg';
@@ -7,37 +7,59 @@ import heroPodium from '../assets/web/set2/hero-podium.jpg';
 import brandSpeaker from '../assets/web/set2/brand-speaker.jpg';
 import brandTeam from '../assets/web/set2/brand-team.jpg';
 import brandWorkspace from '../assets/web/set2/brand-workspace.jpg';
+import AnimatedMetric from '../components/AnimatedMetric';
+import MagneticLink from '../components/MagneticLink';
 import { buildSignals, contentPillars, currentFocus, identitySignals, siteMeta, spotlightCards, stats, whyBuild } from '../data/siteData';
 
 function HomePage() {
+  const identities = ['AI Builder', 'Education Innovator', 'Automation Developer', 'Student Entrepreneur'];
+  const [identityIndex, setIdentityIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setIdentityIndex((current) => (current + 1) % identities.length);
+    }, 2400);
+
+    return () => window.clearInterval(interval);
+  }, [identities.length]);
+
   return (
     <>
       <section className="hero-grid page-hero">
         <div className="hero-copy editorial-panel aurora-panel reveal-card">
           <p className="section-eyebrow">AI + education + automation</p>
           <h1 className="display-title">Building AI-powered systems for learning, growth, and digital leverage.</h1>
+          <div className="identity-rotator" aria-live="polite">
+            <span className="identity-label">Current identity</span>
+            <strong className="identity-value" key={identities[identityIndex]}>{identities[identityIndex]}</strong>
+          </div>
           <p className="lead-copy">
             I started building after seeing how many students around me had effort, but not enough clarity, direction, or access to smarter tools. Now I am focused on products that make progress easier through AI, systems thinking, and better digital experiences.
           </p>
           <div className="cta-cluster">
-            <Link className="button dark" to="/projects">View selected work</Link>
-            <Link className="button light" to="/about">Why I build</Link>
+            <MagneticLink className="button dark" to="/projects">View selected work</MagneticLink>
+            <MagneticLink className="button light" to="/about">Why I build</MagneticLink>
           </div>
           <div className="stat-row">
-            {stats.map((item) => (
-              <article className="stat-chip" key={item.label}>
-                <strong>{item.value}</strong>
-                <span>{item.label}</span>
-              </article>
-            ))}
+            {stats.map((item) => <AnimatedMetric key={item.label} value={item.value} label={item.label} />)}
           </div>
         </div>
 
-        <div className="hero-visual editorial-panel dark-panel reveal-card">
+        <div className="hero-visual editorial-panel dark-panel reveal-card perspective-panel">
           <img className="hero-photo" src={heroPodium} alt="General podium and microphone stage scene" />
           <div className="image-caption-block">
             <span>Current positioning</span>
             <p>Student entrepreneur. Educator. AI builder. Someone preparing for a future shaped by systems, tools, and digital trust.</p>
+          </div>
+          <div className="status-widget-row">
+            <article className="status-widget">
+              <span>Current focus</span>
+              <strong>AI education systems</strong>
+            </article>
+            <article className="status-widget live">
+              <span>Status</span>
+              <strong>Building</strong>
+            </article>
           </div>
         </div>
       </section>
@@ -80,19 +102,19 @@ function HomePage() {
           <p className="section-eyebrow soft">Why I build</p>
           <h3>Confusion wastes talent.</h3>
           <p>I care about products that reduce friction for students and make progress feel more navigable, not more overwhelming.</p>
-          <Link className="inline-action" to="/about">Read the full story</Link>
+          <MagneticLink className="inline-action" to="/about">Read the full story</MagneticLink>
         </article>
         <article className="feature-card image-card warm-panel reveal-card">
           <p className="section-eyebrow">Projects</p>
           <h3>Built around real motives</h3>
           <p>Each project now explains the problem, why I chose it, what I built, and where I think it can go next.</p>
-          <Link className="inline-action" to="/projects">See the case studies</Link>
+          <MagneticLink className="inline-action" to="/projects">See the case studies</MagneticLink>
         </article>
         <article className="feature-card image-card plum-panel reveal-card">
           <p className="section-eyebrow soft">What I am building</p>
           <h3>Systems over noise</h3>
           <p>I am more interested in leverage, automation, and useful AI experiences than in making static brochure projects.</p>
-          <Link className="inline-action" to="/contact">Start a conversation</Link>
+          <MagneticLink className="inline-action" to="/contact">Start a conversation</MagneticLink>
         </article>
       </section>
 
@@ -107,6 +129,19 @@ function HomePage() {
               <strong>{item}</strong>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="terminal-panel editorial-panel dark-panel reveal-card">
+        <div>
+          <p className="section-eyebrow soft">Live system notes</p>
+          <h2 className="section-title light">A builder profile should feel active, not archived.</h2>
+        </div>
+        <div className="terminal-shell" aria-label="Current builder directions">
+          <p>&gt; Building AI systems for students who need clearer next steps</p>
+          <p>&gt; Exploring education technology with product-first thinking</p>
+          <p>&gt; Automating workflows that remove friction from learning and content</p>
+          <p>&gt; Scaling a brand around systems, clarity, and long-term leverage</p>
         </div>
       </section>
 
